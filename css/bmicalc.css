@@ -1,0 +1,192 @@
+:root{
+  --black: #424242;
+  --yellow: #FFD366;
+  --yellow_activate: #DEA921;
+  --grey: #f2f2f2;
+  --white: #fff;
+
+  --light: #31BAF9;
+  --normal: #86D73F;
+  --overweight: #FF982D;
+  --obese: #FF6C02;
+  --severe-obese: #FF1200;
+
+
+  --ssfont: 12px;
+  --sfont: 18px;
+  --font: 24px;
+}
+
+*{
+  /* border: 1px solid #000; */
+  font-family: Microsoft JhengHei;
+}
+
+html,body{
+  margin: 0;
+  background-color: var(--grey);
+}
+
+.header{
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background-color: var(--black);
+}
+
+.logo{
+  width: 117px;
+  height: 117px;
+
+  background-image: url('img/BMICLogo.png');
+  background-size: cover;
+}
+
+.wrap_input{
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+label{
+  font-size: var(--sfont);
+  color: var(--yellow);
+}
+
+input{
+  padding: 5px;
+  margin: 5px;
+  font-size: var(--font);
+
+  color: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.1);
+  border: 2px solid var(--yellow);
+  border-radius: 10px;
+}
+input:focus{
+  outline: none;
+}
+
+.btn{
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.run{
+
+  font-size: var(--font);
+  color: var(--black);
+  background-color: var(--yellow);
+  cursor: pointer;
+}
+.run:hover{
+  box-shadow: 0 1px 6px 3px rgba(255,195,49,0.64);
+}
+.run:active{
+  background-color: var(--yellow_activate);
+}
+
+.out{
+  flex-direction: column;
+  border: 7px solid var(--normal);
+  color: var(--normal);
+  display: none;
+}
+
+.bmi{
+  font-size: 32px;
+}
+
+.out>span{
+  font-size: var(--ssfont);
+}
+
+.icon{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  transform: translate(45px,45px);
+
+  border-radius: 100%;
+  background-color: var(--normal);
+  border: 3px solid var(--black);
+}
+
+.icon>span{
+  width: 14px;
+  height: 19px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background-image: url('img/icons_loop.png');
+}
+
+.outtitle{
+  position: absolute;
+}
+
+.wrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-bottom: 90px;
+}
+
+.top{
+  font-size: var(--font);
+  margin: 35px;
+}
+
+.outcome{
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px;
+  margin-bottom: 15px;
+  font-size: var(--font);
+  background-color: var(--white);
+  border-left: 7px solid var(--normal);
+}
+.outcome[data-title = "5"]{
+  border-left: 7px solid var(--severe-obese);
+}
+.outcome[data-title = "3"],.outcome[data-title = "4"]{
+  border-left: 7px solid var(--obese);
+}
+.outcome[data-title = "2"]{
+  border-left: 7px solid var(--overweight);
+}
+.outcome[data-title = "1"]{
+  border-left: 7px solid var(--normal);
+}
+.outcome[data-title = "0"]{
+  border-left: 7px solid var(--light);
+}
+
+.title{
+  width: 100px;
+}
+
+.item{
+  display: flex;
+  align-items: center;
+}
+.item>span{
+  font-size: var(--ssfont);
+  margin-right: 5px;
+}
+
+.footer{
+  height: 90px;
+  margin-top: 90px;
+  background-color: var(--yellow);
+}
