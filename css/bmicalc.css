@@ -8,13 +8,15 @@
   --light: #31BAF9;
   --normal: #86D73F;
   --overweight: #FF982D;
-  --obese: #FF6C02;
+  --little-obese: #FF6C02;
+  --medium-obese: #FF6C02;
   --severe-obese: #FF1200;
 
 
   --ssfont: 12px;
   --sfont: 18px;
   --font: 24px;
+  --lfont: 32px;
 }
 
 *{
@@ -24,14 +26,20 @@
 
 html,body{
   margin: 0;
+  width: 100%;
+  height: 100%;
   background-color: var(--grey);
+}
+
+.wrap{
+  height: 100%;
 }
 
 .header{
   height: 300px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 
   background-color: var(--black);
 }
@@ -48,6 +56,8 @@ html,body{
   width: 250px;
   display: flex;
   flex-direction: column;
+
+  margin: 0px 10%;
 }
 
 label{
@@ -78,7 +88,6 @@ input:focus{
   justify-content: center;
 }
 .run{
-
   font-size: var(--font);
   color: var(--black);
   background-color: var(--yellow);
@@ -93,9 +102,8 @@ input:focus{
 
 .out{
   flex-direction: column;
-  border: 7px solid var(--normal);
-  color: var(--normal);
-  display: none;
+  border: 7px solid ;
+  display: flex;
 }
 
 .bmi{
@@ -106,18 +114,28 @@ input:focus{
   font-size: var(--ssfont);
 }
 
-.icon{
+.outtitle{
+  position: absolute;
+  padding: 18px;
+  font-size: var(--lfont);
+  transform: translateX(120%);
+}
+
+.reset{
   width: 30px;
   height: 30px;
   position: absolute;
   transform: translate(45px,45px);
 
   border-radius: 100%;
-  background-color: var(--normal);
   border: 3px solid var(--black);
+  cursor: pointer;
+}
+.reset:hover{
+  transform: translate(45px,45px) scale(1.1);
 }
 
-.icon>span{
+.reset>span{
   width: 14px;
   height: 19px;
   position: absolute;
@@ -127,16 +145,12 @@ input:focus{
   background-image: url('img/icons_loop.png');
 }
 
-.outtitle{
-  position: absolute;
-}
-
-.wrap{
+.wrap_record{
+  min-height: calc(100% - 300px);
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  padding-bottom: 90px;
+  margin-bottom: 35px;
 }
 
 .top{
@@ -146,6 +160,7 @@ input:focus{
 
 .outcome{
   width: 70%;
+  box-sizing: initial;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -154,22 +169,7 @@ input:focus{
   margin-bottom: 15px;
   font-size: var(--font);
   background-color: var(--white);
-  border-left: 7px solid var(--normal);
-}
-.outcome[data-title = "5"]{
-  border-left: 7px solid var(--severe-obese);
-}
-.outcome[data-title = "3"],.outcome[data-title = "4"]{
-  border-left: 7px solid var(--obese);
-}
-.outcome[data-title = "2"]{
-  border-left: 7px solid var(--overweight);
-}
-.outcome[data-title = "1"]{
-  border-left: 7px solid var(--normal);
-}
-.outcome[data-title = "0"]{
-  border-left: 7px solid var(--light);
+  border-left: 7px solid;
 }
 
 .title{
@@ -186,7 +186,7 @@ input:focus{
 }
 
 .footer{
+  width: 100%;
   height: 90px;
-  margin-top: 90px;
   background-color: var(--yellow);
 }
