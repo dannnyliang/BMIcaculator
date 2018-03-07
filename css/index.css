@@ -1,0 +1,92 @@
+:root{
+  --black: #424242;
+  --grey: #f2f2f2;
+  --yellow: #FFD366;
+}
+
+*{
+  /* border: 1px solid #000; */
+  font-family: Microsoft JhengHei;
+}
+
+html,body{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--grey);
+}
+
+.wrap{
+  width: 100%;
+  /* height: 200px; */
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--black);
+  padding: 20px;
+}
+
+.logo{
+  width: 150px;
+  height: 150px;
+  background: url('img/BMICLogo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 50px;
+}
+
+.inputs{
+  display: flex;
+  flex-direction: column;
+
+  font-size: 24px;
+  color: var(--grey);
+}
+
+.inputs input{
+  font-size: 24px;
+  border-radius: 5px;
+  border: none;
+
+  box-sizing: border-box;
+  padding: 5px;
+  color: var(--grey);
+  background-color: var(--black);
+  border: 3px solid #fff;
+}
+
+input:focus{
+  outline: none;
+  border: 3px solid var(--yellow);
+}
+
+.btn-wrap{
+  margin: 10px 0px;
+  display: flex;
+  /* justify-content: space-around; */
+}
+
+.btn-wrap button{
+  background: none;
+  border: none;
+
+  flex:1;
+
+  font-size: 18px;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.btn-wrap button:hover{
+  background-color: var(--yellow);
+  border: 3px solid var(--yellow);
+  color: var(--black);
+}
